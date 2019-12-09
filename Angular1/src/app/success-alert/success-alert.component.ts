@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class SuccessAlertComponent implements OnInit {
   username = '';
   allowNewUserName = false;
+  ShowSecret = false;
+  secrets = [];
 
   constructor() {
+  
    }
 
   ngOnInit() {
@@ -17,6 +20,11 @@ export class SuccessAlertComponent implements OnInit {
 
   onReset() {
     this.username = '';
+  }
+
+  onToggleDetails(){
+    this.ShowSecret = !this.ShowSecret;
+    this.secrets.push(this.secrets.length + 1);
   }
 
   onUpdateUserName(event: Event){

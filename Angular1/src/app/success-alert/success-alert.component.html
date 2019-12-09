@@ -4,3 +4,15 @@
 <input type="text" class="form-control" [(ngModel)]="username">
 <p>{{username}}</p>
 <button class="btn btn-primary" [disabled]="username === '' " (click)="onReset()">Reset</button>
+
+<br>
+<br>
+
+<!-- <button class="btn btn-success" (click)="showSecret=!showSecret">Display Details</button> -->
+<button class="btn btn-success" (click)="onToggleDetails()">Display Details</button>
+<p *ngIf="showSecret">Christmas is coming</p>
+<p 
+*ngFor="let secret of secrets"
+[ngStyle]="{backgroundColor : secret >= 5 ? 'blue':'white'}"
+[ngClass]="{'white-class': secret >= 5}"
+>{{secret}}</p>
